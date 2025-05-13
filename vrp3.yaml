@@ -1,0 +1,86 @@
+name: vRP
+version: v1.0.0
+author: vRP-Framework / Sharky521
+description: A vRP deployment that contains essential functionality for the most basic RP server.
+
+tasks:
+  #  Download Base Files
+  - action: download_github
+    src: https://github.com/vrp-framework/txAdminRecipe
+    ref: main
+    dest: ./tmp/vrp
+
+  - action: move_path
+    src: ./tmp/vrp/server.cfg
+    dest: ./server.cfg
+
+  - action: move_path
+    src: ./tmp/vrp/vrp-logo.png
+    dest: ./vrp-logo.png
+
+  # STANDALONE
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    subpath: resources
+    dest: ./resources/[cfx-default]
+  - action: remove_path
+    path: ./resources/[cfx-default]/[gameplay]/chat
+
+  - action: download_file
+    path: ./tmp/files/oxmysql.zip
+    url: https://github.com/overextended/oxmysql/releases/download/v2.12.0/oxmysql.zip
+  - action: unzip
+    dest: ./resources/[dependencies]
+    src: ./tmp/files/oxmysql.zip
+
+  # VOICE
+  - action: download_github
+    dest: ./resources/[voice]/pma-voice
+    ref: main
+    src: https://github.com/AvarianKnight/pma-voice
+
+  # MAPS  
+  - action: download_github
+    dest: ./resources/[map]/bob74_ipl
+    ref: master
+    src: https://github.com/Bob74/bob74_ipl
+
+  - action: download_github
+    dest: ./resources/[map]/pillbox
+    ref: main
+    src: https://github.com/Lorenc95/pillbox
+
+  - action: waste_time # prevent github throttling
+    seconds: 10
+
+# Downloading vRP resources
+  - action: download_github
+    dest: ./resources/[vrp-core]/vrp
+    ref: main
+    src: https://github.com/vRP-framework/vRP
+
+  - action: download_file
+    path: ./tmp/files/oxmysql.zip
+    url: https://github.com/overextended/oxmysql/releases/download/v2.12.0/oxmysql.zip
+  - action: unzip
+    dest: ./resources/[dependencies]
+    src: ./tmp/files/oxmysql.zip
+
+  - action: download_github
+    dest: ./resources/[vrp-core]/[vrp-db-drivers]
+    ref: main
+    src: https://github.com/vRP-framework/vRP-db-drivers
+  
+  - action: download_github
+    dest: ./resources/[vrp]/vrp_loading
+    ref: main
+    src: https://github.com/Boss-Man-Dev/vrp_loading
+
+  - action: download_github
+    dest: ./resources/[vrp]/vrp_basic_mission
+    ref: main
+    src: https://github.com/vRP-framework/vRP-basic-mission
+
+# Clean up
+  - action: remove_path
+    path: ./tmp
