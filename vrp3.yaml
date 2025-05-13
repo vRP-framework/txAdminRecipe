@@ -54,9 +54,9 @@ tasks:
     seconds: 10
 
 # Downloading vRP resources
-  - action: download_github
+ - action: download_github
     dest: ./resources/[vrp-core]/vrp
-    ref: main
+    ref: master
     src: https://github.com/vRP-framework/vRP
 
   - action: download_file
@@ -68,7 +68,7 @@ tasks:
 
   - action: download_github
     dest: ./resources/[vrp-core]/[vrp-db-drivers]
-    ref: main
+    ref: master
     src: https://github.com/vRP-framework/vRP-db-drivers
   
   - action: download_github
@@ -78,7 +78,7 @@ tasks:
 
   - action: download_github
     dest: ./resources/[vrp]/vrp_basic_mission
-    ref: main
+    ref: master
     src: https://github.com/vRP-framework/vRP-basic-mission
 
 # Clean up
