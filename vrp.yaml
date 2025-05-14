@@ -1,6 +1,6 @@
 name: vRP
 version: v1.0.0
-author: vRP-Framework / Sharky521
+author: vRP-Framework (Sharky521)
 description: A vRP deployment that contains essential functionality for the most basic RP server.
 
 tasks:
