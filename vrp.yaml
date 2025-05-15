@@ -35,18 +35,18 @@ tasks:
 
   # VOICE
   - action: download_github
-    dest: ./resources/[voice]/pma-voice
+    dest: ./resources/[voice]
     ref: main
     src: https://github.com/AvarianKnight/pma-voice
 
   # MAPS  
   - action: download_github
-    dest: ./resources/[map]/bob74_ipl
+    dest: ./resources/[map]
     ref: master
     src: https://github.com/Bob74/bob74_ipl
 
   - action: download_github
-    dest: ./resources/[map]/pillbox
+    dest: ./resources/[map]
     ref: main
     src: https://github.com/Lorenc95/pillbox
 
@@ -55,7 +55,7 @@ tasks:
 
 # Downloading vRP resources
   - action: download_github
-    dest: ./resources/[vrp-core]/vrp
+    dest: ./resources/[vrp-core]
     ref: master
     src: https://github.com/vRP-framework/vRP
 
@@ -72,12 +72,12 @@ tasks:
     src: https://github.com/vRP-framework/vRP-db-drivers
   
   - action: download_github
-    dest: ./resources/[vrp]/vrp_loading
+    dest: ./resources/[vrp]
     ref: main
     src: https://github.com/Boss-Man-Dev/vrp_loading
 
   - action: download_github
-    dest: ./resources/[vrp]/vrp_basic_mission
+    dest: ./resources/[vrp]
     ref: master
     src: https://github.com/vRP-framework/vRP-basic-mission
 
