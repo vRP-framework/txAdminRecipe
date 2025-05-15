@@ -54,7 +54,7 @@ tasks:
     seconds: 10
 
 # Downloading vRP resources
- - action: download_github
+  - action: download_github
     dest: ./resources/[vrp-core]/vrp
     ref: master
     src: https://github.com/vRP-framework/vRP
